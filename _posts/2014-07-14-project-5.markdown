@@ -1,15 +1,15 @@
 ---
-title: Startup Framework
-subtitle: Website Design
+title: Chatter
+subtitle: Node JS
 layout: default
 modal-id: 5
 date: 2014-07-14
-img: startup-framework.png
-thumbnail: startup-framework-thumbnail.png
+img: chatter-framework.png
+thumbnail: chatter-thumbnail.png
 alt: image-alt
-project-date: April 2014
-client: Start Bootstrap
+project-date: August 2015
+client: Personal Project
 category: Web Development
-description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse.
+description: A prototype chat room app that was built to learn how to use web sockets with Node JS. The app was built using Sails JS for the app's server side framework and Angular JS for both DOM manipulation and for client side form validation. 
 
 ---

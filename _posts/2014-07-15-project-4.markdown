@@ -1,15 +1,15 @@
 ---
-title: Treehouse
-subtitle: Website Design
+title: HTML Parser
+subtitle: Go
 layout: default
 modal-id: 4
 date: 2014-07-15
-img: treehouse.png
-thumbnail: treehouse-thumbnail.png
+img: htmlparser.png
+thumbnail: htmlparser-thumbnail.png
 alt: image-alt
-project-date: April 2014
-client: Start Bootstrap
+project-date: August 2015
+client: Personal Project
 category: Web Development
-description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse.
+description: This app can be used to parse the HTML markup of a given URL to search for specific page attributes (embedded video, Google Analytics, jQuery, etc). The purpose of this app was to learn the Go programming language in the context of web development. 
 
 ---
