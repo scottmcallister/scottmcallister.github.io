@@ -10,6 +10,7 @@ alt: image-alt
 project-date: August 2015
 client: Personal Project
 category: Web Development
+link: http://golang-html-parser.herokuapp.com/
 description: This app can be used to parse the HTML markup of a given URL to search for specific page attributes (embedded video, Google Analytics, jQuery, etc). The purpose of this app was to learn the Go programming language in the context of web development. 
 
 ---

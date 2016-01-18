@@ -14,7 +14,7 @@
                         <div class="modal-body">
                             <h2>{{ post.title }}</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
+                            <a target="_blank" href="{{ post.link }}"><img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}"></a>
                             <p>{{ post.description }}</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
@@ -28,6 +28,9 @@
                                 <li>Service:
                                     <strong>{{ post.category }}
                                     </strong>
+                                </li>
+                                <li>Link:
+                                    <a target="_blank" href="{{ post.link }}">Click Here</a>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>

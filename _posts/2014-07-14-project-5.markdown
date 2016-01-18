@@ -10,6 +10,7 @@ alt: image-alt
 project-date: August 2015
 client: Personal Project
 category: Web Development
+link: https://github.com/scottmcallister/chatter
 description: A prototype chat room app that was built to learn how to use web sockets with Node JS. The app was built using Sails JS for the app's server side framework and Angular JS for both DOM manipulation and for client side form validation. 
 
 ---

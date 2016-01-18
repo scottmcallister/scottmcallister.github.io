@@ -10,6 +10,7 @@ alt: image-alt
 project-date: March 2015
 client: Personal Project
 category: Web Development
+link: http://dino-dictionary.herokuapp.com/
 description: This app queries a Postgres database for dinosaur species based on the keywords entered and refinement options selected. 
 
 ---

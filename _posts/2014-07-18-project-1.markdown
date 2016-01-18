@@ -10,6 +10,7 @@ alt: image-alt
 project-date: April 2015
 client: Nextopia
 category: Web Development
+link: https://apps.shopify.com/nextopia-search
 description: This app was built using Ruby on Rails and Shopify's "shopify-app" gem. This app allows Shopify customers to integrate Nextopia search into their online store without having to provide a feed file for their product catalog to Nextopia. 
 
 ---
