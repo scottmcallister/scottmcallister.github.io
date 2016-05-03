@@ -1,16 +1,16 @@
 ---
-title: Dinosaur Search
-subtitle: Ruby on Rails
+title: Flickr Client
+subtitle: React Native
 layout: default
 modal-id: 6
-date: 2014-07-15
-img: dinosearch.png
-thumbnail: dinosearch-thumbnail.png
+date: 2016-02-14
+img: flickr.png
+thumbnail: flickr-thumbnail.png
 alt: image-alt
-project-date: March 2015
+project-date: February 2016
 client: Personal Project
-category: Web Development
-link: http://dino-dictionary.herokuapp.com/
-description: This app queries a Postgres database for dinosaur species based on the keywords entered and refinement options selected. 
+category: Mobile Development
+link: https://github.com/scottmcallister/flickr-client
+description: This iOS app uses the Flickr API to allow users to search for photos. There are options to sort search results by relevance, date posted, date taken, or interestingness. The app was built using React Native. 
 
 ---

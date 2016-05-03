@@ -3,7 +3,7 @@ title: HTML Parser
 subtitle: Go
 layout: default
 modal-id: 4
-date: 2014-07-15
+date: 2015-10-15
 img: htmlparser.png
 thumbnail: htmlparser-thumbnail.png
 alt: image-alt

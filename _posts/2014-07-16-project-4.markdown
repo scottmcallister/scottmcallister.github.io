@@ -3,7 +3,7 @@ title: Apples & Oranges
 subtitle: Django
 layout: default
 modal-id: 3
-date: 2014-07-16
+date: 2015-09-16
 img: appleorange.png
 thumbnail: appleorange-thumbnail.png
 alt: image-alt

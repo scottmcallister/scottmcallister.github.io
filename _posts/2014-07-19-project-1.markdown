@@ -3,7 +3,7 @@ title: Nextopia Shopify App
 subtitle: Ruby on Rails
 layout: default
 modal-id: 1
-date: 2014-07-18
+date: 2015-04-01
 img: shopify.png
 thumbnail: shopify-thumbnail.png
 alt: image-alt
