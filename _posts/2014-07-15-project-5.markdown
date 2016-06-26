@@ -1,16 +1,16 @@
 ---
-title: HTML Parser
-subtitle: Go
+title: Simple Foreign Exchange
+subtitle: Android / Java
 layout: default
 modal-id: 4
-date: 2015-10-15
-img: htmlparser.png
-thumbnail: htmlparser-thumbnail.png
+date: 2016-06-12
+img: simpleforeignexchange.png
+thumbnail: simpleforeignexchange-thumbnail.png
 alt: image-alt
-project-date: August 2015
+project-date: June 2016
 client: Personal Project
-category: Web Development
-link: http://golang-html-parser.herokuapp.com/
-description: This app can be used to parse the HTML markup of a given URL to search for specific page attributes (embedded video, Google Analytics, jQuery, etc). The purpose of this app was to learn the Go programming language in the context of web development. 
+category: Mobile Development
+link: https://play.google.com/store/apps/details?id=mrscottmcallister.com.simpleforeignexchange&hl=en
+description: This app can be used to look up current exchange rates between currencies. It was built using Java and the Android SDK. The app is available for download on Google Play. The source code can be found <a href="https://github.com/scottmcallister/simple-foreign-exchange" target="_blank">here</a>.
 
 ---
