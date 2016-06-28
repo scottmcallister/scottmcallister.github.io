@@ -1,5 +1,4 @@
 url: https://scottmcallister.github.io
-baseurl: 
 
 # Site settings
 title: Scott McAllister
@@ -9,43 +8,36 @@ description: "Write an awesome description for your new site here. You can edit 
 # Color settings (hex-codes without the leading hash-tag)
 color:
   primary: 0099FF
-  secondary: 0066FF  
+  secondary: 0066FF
   secondary-dark: 333
 
-# Team names, titles and social links
-people:
-- name: Kay Garland
-  pic: 1
-  position: Lead Designer
-  social:
-    - title: twitter
-      url: #
-    - title: facebook
-      url: #
-    - title: stack-overflow
-      url: #
+# User settings
+username: Scott McAllister
+user_description: Software Developer
+user_title: Scott McAllister
+email: mr.scott.mcallister@gmail.com
+github_username:  scottmcallister
+linkedin_link:  https://ca.linkedin.com/in/scott-mcallister-89028ba1
 
-- name: Larry Parker
-  pic: 2
-  position: Lead Marketer
-  social:
-    - title: twitter
-      url: #
-    - title: facebook
-      url: #
-    - title: linkedin
-      url: #
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
 
-- name: Diana Petersen
-  pic: 3
-  position: Lead Developer
-  social:
-    - title: twitter
-      url: #
-    - title: facebook
-      url: #
-    - title: google-plus
-      url: #
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+  - title: Series
+    url: /series
+  - title: Tags
+    url: /tags
+  - title: About Me
+    url: /about
+
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
@@ -55,12 +47,3 @@ social:
     url: https://ca.linkedin.com/pub/scott-mcallister/a1/28b/890
   - title: github
     url: http://github.com/scottmcallister
-
-# Postal address (add as many lines as necessary)
-address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
-
-# Build settings
-markdown: kramdown
-permalink: pretty
