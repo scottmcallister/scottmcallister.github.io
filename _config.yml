@@ -1,4 +1,4 @@
-url: https://scottmcallister.github.io
+#url: https://scottmcallister.github.io
 
 # Site settings
 title: Scott McAllister
@@ -29,12 +29,14 @@ permalink: /:title/
 links:
   - title: Home
     url: /
-  - title: Series
-    url: /series
-  - title: Tags
-    url: /tags
   - title: About Me
     url: /about
+  - title: Blog
+    url: /tags
+  - title: Projects
+    url: /series
+
+
 
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']
