@@ -15,18 +15,20 @@ categories:
 
 This is an example component:
 
-{% highlight js %}
+<pre>
+<code class="language-jsx">
 'use strict';
 import React, { Component } from 'react'
 
 export default class extends Component{
   render(){
     return (
-      <h1>Hello World</h1>
+      &lt;h1>Hello World&lt;/h1>
     );
   }
 }
-{% endhighlight %}
+</code>
+</pre>
 
 Check out [react][react] for more info.
 
