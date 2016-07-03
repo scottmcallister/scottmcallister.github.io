@@ -32,9 +32,9 @@ links:
   - title: About Me
     url: /about
   - title: Blog
-    url: /tags
-  - title: Projects
-    url: /series
+    url: /blog
+  - title: Portfolio
+    url: /portfolio
 
 
 

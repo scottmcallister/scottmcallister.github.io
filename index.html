@@ -4,6 +4,7 @@ layout: default
 
 <main id="scroll" class="home" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
     {% for post in site.posts %}
+      {% if post.layout != 'project' %}
         <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
                 <a class="datetime" href="{{ post.url | prepend: site.baseurl }}">
                     <meta itemprop="datePublished" content="{{post.date}}">
@@ -30,5 +31,6 @@ layout: default
                     </div>
                 </div>
         </article>
+        {% endif %}
     {% endfor %}
 </main>

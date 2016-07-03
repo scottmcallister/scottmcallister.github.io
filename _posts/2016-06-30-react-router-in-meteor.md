@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Authentication in Meteor using React Router"
+title: "Custom Authentication in Meteor"
 date: 2016-06-30 09:54:35
 image: '/assets/img/'
 description: 'A tutorial for writing custom authentication in a Meteor project using React Router'

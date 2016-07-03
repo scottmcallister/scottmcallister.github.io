@@ -1,0 +1,16 @@
+---
+title: Nextopia Admin Panel
+subtitle: PHP
+layout: project
+modal-id: 5
+date: 2014-10-01
+img: nextopia2.png
+thumbnail: nextopia2-thumbnail.png
+alt: image-alt
+project-date: October 2014 - Present
+client: Nextopia
+category: Web Development
+link: http://merchant.nextopiasoftware.com
+description: As a software developer for Nextopia, Scott worked on various features of Nextopia's product suite. These features included building a reporting section for autocomplete data, creating a geo-merchandizing section, implementing a templating system for Nextopia's "product finder" product, and many others. The server side code for Nextopia was written in PHP while the front end interface used both jQuery and Angular JS for DOM manipulation.
+
+---
