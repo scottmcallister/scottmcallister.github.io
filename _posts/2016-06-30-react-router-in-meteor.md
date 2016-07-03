@@ -1,13 +1,12 @@
 ---
 layout: post
-title: "React Router in Meteor Tutorial"
+title: "Authentication in Meteor using React Router"
 date: 2016-06-30 09:54:35
 image: '/assets/img/'
-description: 'Step by step instructions for setting up react router in a Meteor project'
+description: 'A tutorial for writing custom authentication in a Meteor project using React Router'
 tags:
 - javascript
 - react
-- react router
 - meteor
 categories:
 - Web Development
