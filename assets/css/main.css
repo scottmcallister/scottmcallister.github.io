@@ -1472,6 +1472,12 @@ footer a:hover {
 }
 .code-description{
   background-color: #c6c4c2;
+  width: auto;
+  max-width: 50rem;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 .code-description p{
   margin-bottom: 0;
@@ -1479,4 +1485,17 @@ footer a:hover {
   color: #565656;
   font-weight: bold;
   font-family: 'Monaco', 'Consolas', 'Menlo', monospace;
+}
+pre{
+  background:none !important;
+  padding:0px !important;
+}
+pre code{
+  background:#222222;
+  padding:2.5rem 1rem;
+  overflow-y: scroll;
+}
+code[class*="language-"]{
+  background: rgb(245, 242, 240) !important;
+  padding:1rem 1rem;
 }

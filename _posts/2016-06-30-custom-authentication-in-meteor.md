@@ -18,7 +18,8 @@ the user to be signed in. Our front end code will be written in React and we'll
 use React Router for routing between views.
 
 First, make sure that you have [Meteor installed][meteor-install] on your machine.
-After you have Meteor installed, lets make our project.
+You'll also need Node JS and NPM for running the app and downloading the necessary
+packages we'll be using. After you have everything installed, lets start our project.
 
 <pre>
 <code>$ meteor create auth-app
@@ -28,9 +29,9 @@ $ meteor add accounts-password react-meteor-data twbs:bootstrap</code>
 </pre>
 
 After just a few commands we've created a Meteor project and installed the
-packages for `react`, `react-router`, `react-meteor-data`, `bootstrap`, and `accounts-password`.
-Now that we have the dependencies we need let's write some code. Replace
-the contents of '`client/main.html`' with this:
+necessary packages we'll need to build our app.
+
+Replace the contents of `client/main.html` with this:
 
 <div class="code-description">
   <p>client/main.html</p>
@@ -64,9 +65,10 @@ Meteor.startup(() => {
 </pre>
 
 Here we're passing an anonymous function to Meteor's `startup()` function which
-will execute as soon as the DOM is ready. This function will render the component
-passed as the first parameter inside the target div. In our case, the component
-being passed is a just a heading that says "Test".
+will execute as soon as the DOM is ready. This function will call react's
+`render()` function and render the component passed as the first parameter
+inside our div. In this case the component being passed is a just a heading
+that says "Test", but we'll be replacing this with something else very soon.
 
 At this point we should try opening our app in a browser to make sure our code is
 working correctly. Try running `meteor` in the console and opening `localhost:3000`
@@ -79,9 +81,9 @@ our app. Let's add some components and a route file to the project:
   <p>new files</p>
 </div>
 <pre>
-<code class="language-php">
-imports/startup/client/routes.jsx               # react router configuration
+<code class="language-php">imports/startup/client/routes.jsx               # react router configuration
 imports/ui/containers/AppContainer.jsx          # password protected container
+imports/ui/containers/MainContainer.jsx         # a container to
 imports/ui/pages/LoginPage.jsx                  # login page
 imports/ui/pages/SignupPage.jsx                 # signup page
 imports/ui/pages/MainPage.jsx                   # password protected page
@@ -92,34 +94,38 @@ imports/ui/pages/MainPage.jsx                   # password protected page
   <p>imports/startup/client/routes.jsx</p>
 </div>
 <pre>
-<code class="language-jsx">
-import React from 'react'
+<code class="language-jsx">import React from 'react'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
 // containers
-import AppContainer from '../../ui/comtainers/AppContainer.jsx'
+import AppContainer from '../../ui/containers/AppContainer.jsx'
+import MainContainer from '../../ui/containers/MainContainer.jsx'
 
 // pages
 import SignupPage from '../../ui/pages/SignupPage.jsx'
 import LoginPage from '../../ui/pages/LoginPage.jsx'
-import MainPage from '../../ui/pages/MainPage.jsx'
 
 export const renderRoutes = () => (
   <Router history={browserHistory}>
     <Route path="login" component={LoginPage}/>
     <Route path="signup" component={SignupPage}/>
     <Route path="/" component={AppContainer}>
-      <IndexRoute component={MainPage}/>
+      <IndexRoute component={MainContainer}/>
     &lt;/Route>
   &lt;/Router>
 );
+
 </code>
 </pre>
 
-The routes file has three routes, one of which is nested inside the AppContainer.
-We're nesting the MainPage route inside a container to ensure that the user is
-logged in before showing the page. We'll implement logic to redirect users that
-aren't logged in to the login page.
+The routes file has three routes; an index route, one for login, and one for
+signup. The index route is nested within an AppContainer, which we will use to
+make sure users are logged in before they can see the main page of our app.
+
+We're also nesting our MainPage inside a MainContainer component to provide data
+to our main page. Meteor provides a "createContainer" method to help us access
+reactive data sources within our rendered views. For more information about how
+this works you can check out Meteor's [documentation][create-container].
 
 <div class="code-description">
   <p>imports/ui/containers/AppContainer.jsx</p>
@@ -298,7 +304,30 @@ export default class MainPage extends Component {
 
 The main page is simply showing the user's name and allowing the user to log out
 by clicking a link in the nav bar. Obviously this isn't a realistic use case for
-a Meteor app, but you can see how session information can be passed down from a
-container to it's child components. 
+a Meteor app, but it illustrates how you can ensure most of your application is
+password protected.
+
+The last change you will need to make to set up routing in our application will
+be in `client/main.jsx`. Instead of rendering the placeholder "test" component,
+we will be including the `renderRoutes()` function from our routes file and
+rendering that in our target div.
+
+<div class="code-description">
+  <p>client/main.jsx</p>
+</div>
+<pre>
+<code class="language-jsx">import React from 'react';
+import { Meteor } from 'meteor/meteor';
+import { render } from 'react-dom';
+
+// add render routes function
+import { renderRoutes } from '../imports/startup/client/routes.jsx'
+
+// render routes after DOM has loaded
+Meteor.startup(() => {
+  render(renderRoutes(), document.getElementById('target'));
+});</code>
+</pre>
 
 [meteor-install]: https://www.meteor.com/install
+[create-container]: https://guide.meteor.com/react.html#using-createContainer
