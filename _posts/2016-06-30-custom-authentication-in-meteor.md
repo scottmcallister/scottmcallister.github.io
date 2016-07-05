@@ -371,7 +371,7 @@ export default class MainPage extends Component {
 
   render(){
     let currentUser = this.props.currentUser;
-    let userDataAvailable = currentUser !== undefined;
+    let userDataAvailable = (currentUser !== undefined);
     let loggedIn = (currentUser && userDataAvailable);
     return (
       &lt;div>
