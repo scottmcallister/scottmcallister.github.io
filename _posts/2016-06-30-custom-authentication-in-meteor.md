@@ -12,6 +12,17 @@ categories:
 - Web Development
 ---
 
+There are plenty of tutorials around the web that show you how to set up user authentication 
+in Meteor. Most of these tutorials are using [accounts-ui][accounts-ui] to quickly set up
+authentication in your views. While this can be very useful for including authentication in a
+prototype app, I would recommend building these views yourself before deploying
+a production app.
+
+Also, the majority of Meteor tutorials I've seen are using Flow Router for handling routes
+between views. Support for Flow Router in React is fantastic, but learning React Router
+will be much more useful when using React with something other than Meteor
+on the back end.
+
 In this tutorial we will be writing a very simple Meteor app with custom built login
 and signup pages. There will be one page that is password protected and will require
 the user to be signed in. Our front end code will be written in React and we'll
@@ -19,7 +30,7 @@ use React Router for routing between views.
 
 First, make sure that you have [Meteor installed][meteor-install] on your machine.
 You'll also need Node JS and NPM for running the app and downloading the necessary
-packages we'll be using. After you have everything installed, lets start our project.
+packages we'll be using. After you have everything installed, let's start our project.
 
 <pre>
 <code>$ meteor create auth-app
@@ -28,7 +39,7 @@ $ meteor npm install --save react react-dom react-router react-addons-pure-rende
 $ meteor add accounts-password react-meteor-data twbs:bootstrap</code>
 </pre>
 
-After just a few commands we've created a Meteor project and installed the
+After just a few commands, we've created a Meteor project and installed the
 necessary packages we'll need to build our app.
 
 Replace the contents of `client/main.html` with this:
@@ -47,8 +58,10 @@ Replace the contents of `client/main.html` with this:
 </pre>
 
 
-The "target" div is where we will be rendering our app's React components. Lets try
-rendering a component right now. Rename `client/main.js` to `client/main.jsx` and
+The "target" div is where we will be rendering our app's React components. Let's try
+rendering a component right now.
+
+Rename `client/main.js` to `client/main.jsx` and
 replace all of the file's code with this:
 
 <div class="code-description">
@@ -67,7 +80,7 @@ Meteor.startup(() => {
 Here we're passing an anonymous function to Meteor's `startup()` function which
 will execute as soon as the DOM is ready. This function will call React's
 `render()` function and render the component passed as the first parameter
-inside our div. In this case the component being passed is a just a heading
+inside our div. In this case, the component being passed is just a heading
 that says "Test", but we'll be replacing this with something else very soon.
 
 At this point we should try opening our app in a browser to make sure our code is
@@ -124,11 +137,11 @@ export const renderRoutes = () => (
 </code>
 </pre>
 
-The routes file in our app has three routes; one for login, one for
+The routes file in our app has three routes: one for login, one for
 signup, and an index route. The index route is nested within an AppContainer, which we will use to
 make sure users are logged in before they can see the main page of our app.
 
-We're also nesting our MainPage inside a MainContainer component to provide data
+We're also nesting our MainPage inside a MainContainer component to send data
 to our main page. Meteor provides a "[createContainer][create-container]" method to help us access
 reactive data sources within our rendered views.
 
@@ -350,7 +363,7 @@ export default class SignupPage extends Component {
 </pre>
 
 Our signup page component is very similar to our login page, only instead of calling
-`loginWithPassword()`, we'll be creating a user with the accounts module's
+`loginWithPassword()`, we'll be creating a user with the
 `createUser()` function. This will insert a new user account document into our
 app's database.
 
@@ -440,7 +453,7 @@ app is not working for whatever reason, the source code for this tutorial is ava
 [here][github-repo] for your reference.
 
 As you can see, setting up user authentication with custom views is entirely possible
-and fairly straight forward in Meteor when using React and React Router. While there
+and fairly straightforward in Meteor when using React and React Router. While there
 are modules like `accounts-ui` that you can use to add login and signup views to your app, building
 out these views yourself will give you the freedom to fully customize what's being shown to your users.
 
@@ -448,3 +461,4 @@ out these views yourself will give you the freedom to fully customize what's bei
 [create-container]: https://guide.meteor.com/react.html#using-createContainer
 [meteor-directory-structure]: https://guide.meteor.com/structure.html#example-app-structure
 [github-repo]: https://github.com/scottmcallister/auth-app
+[accounts-ui]: https://atmospherejs.com/meteor/accounts-ui
