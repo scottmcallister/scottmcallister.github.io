@@ -1499,3 +1499,11 @@ code[class*="language-"]{
   background: rgb(245, 242, 240) !important;
   padding:1rem 1rem;
 }
+#disqus_thread{
+  width: auto;
+  max-width: 50rem;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
