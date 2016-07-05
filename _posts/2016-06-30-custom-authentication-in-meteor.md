@@ -12,13 +12,13 @@ categories:
 - Web Development
 ---
 
-There are plenty of tutorials around the web that show you how to set up user authentication 
+There are plenty of tutorials around the web that show you how to set up user authentication
 in Meteor. Most of these tutorials are using [accounts-ui][accounts-ui] to quickly set up
 authentication in your views. While this can be very useful for including authentication in a
 prototype app, I would recommend building these views yourself before deploying
-a production app.
+an app to production.
 
-Also, the majority of Meteor tutorials I've seen are using Flow Router for handling routes
+Also, the majority of Meteor tutorials out there are using Flow Router for handling routes
 between views. Support for Flow Router in React is fantastic, but learning React Router
 will be much more useful when using React with something other than Meteor
 on the back end.
