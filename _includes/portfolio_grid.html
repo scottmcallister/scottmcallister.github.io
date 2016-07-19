@@ -21,19 +21,19 @@
                 <div class="portfolio-caption">
                     <h4>{{ post.title }}</h4>
                     {% if post.subtitle == "Ruby on Rails"%}
-                    <p class="text-muted"><img class="platform-icon" src="img/icons/ruby.png"> {{ post.subtitle }}</p>
+                    <div class="text-muted"><img class="platform-icon" src="img/icons/ruby.png"> {{ post.subtitle }}</div>
                     {% elsif post.subtitle == "Sails JS"%}
-                    <p class="text-muted"><img class="platform-icon" src="img/icons/sailsjs.png"> {{ post.subtitle }}</p>
+                    <div class="text-muted"><img class="platform-icon" src="img/icons/sailsjs.png"> {{ post.subtitle }}</div>
                     {% elsif post.subtitle == "Django"%}
-                    <p class="text-muted"><img class="platform-icon" src="img/icons/python.png"> {{ post.subtitle }}</p>
+                    <div class="text-muted"><img class="platform-icon" src="img/icons/python.png"> {{ post.subtitle }}</div>
                     {% elsif post.subtitle == "Android / Java"%}
-                    <p class="text-muted"><img class="platform-icon" src="img/icons/android-2.png"> {{ post.subtitle }}</p>
+                    <div class="text-muted"><img class="platform-icon" src="img/icons/android.png"> {{ post.subtitle }}</div>
                     {% elsif post.subtitle == "PHP"%}
-                    <p class="text-muted"><img class="platform-icon" src="img/icons/php-p.png"> {{ post.subtitle }}</p>
+                    <div class="text-muted"><img class="platform-icon" src="img/icons/php-p.png"> {{ post.subtitle }}</div>
                     {% elsif post.subtitle == "React Native"%}
-                    <p class="text-muted"><img class="platform-icon" src="img/icons/react.png"> {{ post.subtitle }}</p>
+                    <div class="text-muted"><img class="platform-icon" src="img/icons/react.png"> {{ post.subtitle }}</div>
                     {% else %}
-                    <p class="text-muted">{{ post.subtitle }}</p>
+                    <div class="text-muted">{{ post.subtitle }}</div>
                     {% endif %}
                 </div>
             </div>

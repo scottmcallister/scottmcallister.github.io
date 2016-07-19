@@ -11,8 +11,22 @@ description: "Personal and professional coding projects I've worked on"
   <div class="portfolio">
     <a target="_blank" href="{{ post.link }}">
       <h2>{{ post.title }}</h2>
-      <h4>{{ post.subtitle}}</h4>
-      <img src="{{ site.baseurl }}/assets/img/portfolio/{{ post.thumbnail }}"/>
+      {% if post.subtitle == "Ruby on Rails"%}
+      <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/rails.png"> {{ post.subtitle }}</div>
+      {% elsif post.subtitle == "Sails JS"%}
+      <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/sailsjs.png"> {{ post.subtitle }}</div>
+      {% elsif post.subtitle == "Django"%}
+      <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/django.png"> {{ post.subtitle }}</div>
+      {% elsif post.subtitle == "Android / Java"%}
+      <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/google_android.png"> {{ post.subtitle }}</div>
+      {% elsif post.subtitle == "PHP"%}
+      <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/php-p.png"> {{ post.subtitle }}</div>
+      {% elsif post.subtitle == "React Native"%}
+      <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/react.png"> {{ post.subtitle }}</div>
+      {% else %}
+      <div class="subtitle">{{ post.subtitle }}</div>
+      {% endif %}
+      <img class="thumbnail" src="{{ site.baseurl }}/assets/img/portfolio/{{ post.thumbnail }}"/>
     </a>
     <p>{{ post.description }}</p>
     <hr>
