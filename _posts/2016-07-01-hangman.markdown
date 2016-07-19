@@ -1,0 +1,16 @@
+---
+title: Hangman
+subtitle: Angular 2
+layout: project
+modal-id: 4
+date: 2016-06-12
+img: hangman.png
+thumbnail: hangman.png
+alt: image-alt
+project-date: June 2016
+client: Personal Project
+category: Web Development
+link: https://ng2-hangman.herokuapp.com
+description: This hangman game was built using Angular 2, Express and MongoDB. The app connects to a Mongo database and reads from a collection of popular movie quotes. The source code for this project can be found <a href="http://github.com/scottmcallister/mean-hangman" target="_blank">here</a>.
+
+---
