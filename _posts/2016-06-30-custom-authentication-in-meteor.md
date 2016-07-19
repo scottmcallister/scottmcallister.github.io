@@ -258,19 +258,34 @@ export default class LoginPage extends Component {
               &lt;h1 className="text-center">Login&lt;/h1>
             &lt;/div>
             &lt;div className="modal-body">
-              { error.length > 0 ? &lt;div className="alert alert-danger fade in">{error}&lt;/div> :''}
-              &lt;form id="login-form" className="form col-md-12 center-block" onSubmit={this.handleSubmit}>
+              { error.length > 0 ?
+                &lt;div className="alert alert-danger fade in">{error}&lt;/div>
+                :''}
+              &lt;form  id="login-form"
+                    className="form col-md-12 center-block"
+                    onSubmit={this.handleSubmit}>
                 &lt;div className="form-group">
-                  &lt;input type="email" id="login-email" className="form-control input-lg" placeholder="email"/>
+                  &lt;input type="email"
+                        id="login-email"
+                        className="form-control input-lg"
+                        placeholder="email"/>
                 &lt;/div>
                 &lt;div className="form-group">
-                  &lt;input type="password" id="login-password" className="form-control input-lg" placeholder="password"/>
+                  &lt;input type="password"
+                        id="login-password"
+                        className="form-control input-lg"
+                        placeholder="password"/>
                 &lt;/div>
                 &lt;div className="form-group text-center">
-                  &lt;input type="submit" id="login-button" className="btn btn-primary btn-lg btn-block" value="Login" />
+                  &lt;input type="submit"
+                        id="login-button"
+                        className="btn btn-primary btn-lg btn-block"
+                        value="Login" />
                 &lt;/div>
                 &lt;div className="form-group text-center">
-                  &lt;p className="text-center">Don't have an account? Register &lt;Link to="/signup">here&lt;/Link>&lt;/p>
+                  &lt;p className="text-center">
+                    Don't have an account? Register &lt;Link to="/signup">here&lt;/Link>
+                  &lt;/p>
                 &lt;/div>
               &lt;/form>
             &lt;/div>
@@ -333,22 +348,34 @@ export default class SignupPage extends Component {
               &lt;h1 className="text-center">Sign up&lt;/h1>
             &lt;/div>
             &lt;div className="modal-body">
-              { error.length > 0 ? &lt;div className="alert alert-danger fade in">{error}&lt;/div> :''}
-              &lt;form id="login-form" className="form col-md-12 center-block" onSubmit={this.handleSubmit}>
+              { error.length > 0 ?
+                &lt;div className="alert alert-danger fade in">{error}&lt;/div>
+                :''}
+              &lt;form  id="login-form"
+                    className="form col-md-12 center-block"
+                    onSubmit={this.handleSubmit}>
                 &lt;div className="form-group">
-                  &lt;input type="text" id="signup-name" className="form-control input-lg" placeholder="name"/>
+                  &lt;input type="text" id="signup-name"
+                        className="form-control input-lg" placeholder="name"/>
                 &lt;/div>
                 &lt;div className="form-group">
-                  &lt;input type="email" id="signup-email" className="form-control input-lg" placeholder="email"/>
+                  &lt;input type="email" id="signup-email"
+                        className="form-control input-lg" placeholder="email"/>
                 &lt;/div>
                 &lt;div className="form-group">
-                  &lt;input type="password" id="signup-password" className="form-control input-lg" placeholder="password"/>
+                  &lt;input type="password" id="signup-password"
+                        className="form-control input-lg"
+                        placeholder="password"/>
                 &lt;/div>
                 &lt;div className="form-group">
-                  &lt;input type="submit" id="login-button" className="btn btn-lg btn-primary btn-block" value="Sign Up" />
+                  &lt;input type="submit" id="login-button"
+                        className="btn btn-lg btn-primary btn-block"
+                        value="Sign Up" />
                 &lt;/div>
                 &lt;div className="form-group">
-                  &lt;p className="text-center">Already have an account? Login &lt;Link to="/login">here&lt;/Link>&lt;/p>
+                  &lt;p className="text-center">
+                    Already have an account? Login &lt;Link to="/login">here&lt;/Link>
+                  &lt;/p>
                 &lt;/div>
               &lt;/form>
             &lt;/div>
@@ -389,7 +416,9 @@ export default class MainPage extends Component {
     return (
       &lt;div>
         &lt;div className="container">
-          &lt;h1 className="text-center">{ loggedIn ? 'Welcome '+currentUser.username : '' }&lt;/h1>
+          &lt;h1 className="text-center">
+            { loggedIn ? 'Welcome '+currentUser.username : '' }
+          &lt;/h1>
         &lt;/div>
       &lt;/div>
     );

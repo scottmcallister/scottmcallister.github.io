@@ -1488,6 +1488,8 @@ footer a:hover {
   display: block;
   margin-right: auto;
   margin-left: auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .code-description p{
   margin-bottom: 0;
@@ -1503,7 +1505,11 @@ pre{
 pre code{
   background:#222222;
   padding:2.5rem 1rem;
-  overflow-y: scroll;
+  border:1px solid #dddddd;
+  padding-right:20px;
+  border-top:none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 code[class*="language-"]{
   background: rgb(245, 242, 240) !important;
