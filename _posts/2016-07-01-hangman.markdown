@@ -1,6 +1,6 @@
 ---
 title: Hangman
-subtitle: Angular 2
+subtitle: Angular 2 + Express
 layout: project
 modal-id: 4
 date: 2016-06-12

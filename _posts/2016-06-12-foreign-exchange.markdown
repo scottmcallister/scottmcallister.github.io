@@ -1,6 +1,6 @@
 ---
 title: Simple Foreign Exchange
-subtitle: Android / Java
+subtitle: Android
 layout: project
 modal-id: 4
 date: 2016-06-12
