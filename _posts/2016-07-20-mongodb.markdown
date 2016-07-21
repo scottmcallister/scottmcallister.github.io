@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Introduction to MongoDB"
+date: 2016-07-20 07:03:35
+image: '/assets/img/'
+description: 'A brief overview of MongoDB basic concepts'
+tags:
+- mongodb
+- databases
+categories:
+- Web Development
+---
+
+As far as NoSql databases go, MongoDB is one of the most popular and recognizable
+options out there. 
