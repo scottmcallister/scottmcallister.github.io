@@ -1508,12 +1508,18 @@ pre code{
   border:1px solid #dddddd;
   padding-right:20px;
   border-top:none;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 5px;
+
 }
 code[class*="language-"]{
   background: rgb(245, 242, 240) !important;
   padding:1rem 1rem;
+  border-top-left-radius: none;
+  border-top-right-radius: none;
+}
+pre code .comment{
+  color:#777777;
+  font-size:14px;
 }
 #disqus_thread{
   width: auto;

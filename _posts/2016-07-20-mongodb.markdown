@@ -13,19 +13,33 @@ categories:
 
 As far as NoSql databases go, MongoDB is one of the most popular and recognizable
 options out there. It's been widely adopted in the Node JS community as the data
-store for the popular MEAN stack.
+store for the popular MEAN stack. As a document based NoSql database, MongoDB does
+not use a table structure like most relational databases and instead stores groups
+(collections) of JSON objects (documents).
 
-##Installation
+<h2>Basic Concepts</h2>
+
+If you're used to working with relational databases like MySql and Postgres, you'll
+probably find MongoDB's structure fairly easy to wrap your head around. You can think
+of MongoDB collections as basically a Sql table without any columns defined. You can
+also think of MongoDB documents as essentially rows in a Sql table.
+
+While MongoDB doesn't require any sort of a schema to be implemented, it's usually
+best practice to define some sort of a structure to your documents. This structure
+should be defined at the application level to make sure any documents being inserted
+will have the required fields you'll be reading from in your app.
+
+<h2>Installation</h2>
 
 MongoDB can be installed on Mac, Windows, and Linux systems and there are slight
 differences between installation methods on each platform. I'm going to be
 installing on Mac, so if you're using Windows or Linux I'd recommend taking a
 look at MongoDB's [documentation][mongo-install].
 
-In general the only steps involved are creating a directory to store the database
-and installing the executables needed to run a Mongo server. The default directory
-for storing a Mongo database is `/data/db`, so make sure this directory exists
-and the user you're logged in as has write permissions.
+In general the only steps involved with installing MongoDB are creating a directory
+to store the database and installing the executables needed to run a Mongo server.
+The default directory for storing a Mongo database is `/data/db`, so make sure
+this directory exists and the user you're logged in as has write permissions for it.
 
 <pre>
 <code>$ sudo mkdir /data/db
@@ -39,17 +53,68 @@ For installing the MongoDB executables, we'll be using Homebrew.
 $ brew install mongodb</code>
 </pre>
 
-If you'd rather install MongoDB without Homebrew, there are [instructions][mongo-manual] on MongoDB's
-website showing you how to install manually. 
+If you'd rather install MongoDB without Homebrew, there are [instructions][mongo-manual] on
+MongoDB's website that can guide you through a manual installation.
 
-##Running MongoDB
+<h2>Running MongoDB</h2>
 
+The first step to interacting with MongoDB is starting a MongoDB process. Most
+MongoDB tutorials around the web will tell you to run MongoDB directly using
+the `mongod` command without any arguments.
 
+<pre>
+<code>$ mongod</code>
+</pre>
 
+This works for starting a MongoDB process in the foreground, but I don't like starting
+Mongo this way for a couple of reasons. First of all, if you want to run a web
+app locally that connects to MongoDB or work with your database directly from the
+command line you need to have multiple tabs open in your terminal just to get
+Mongo up and running. Also, in the event that your machine shuts down while Mongo is
+running as a process, the lock file for your Mongo process will need to be
+deleted and you will need to run `mongod --repair` to start another process.
 
+I generally prefer to run MongoDB as a <b>daemon</b>. You can use the `--fork` flag to
+run MongoDB in the background. When using `--fork`, you'll also need to declare
+where logs will be written to by using `--logpath`.
 
+<pre>
+<code>$ mongod --fork --logpath /var/log/mongod.log</code>
+</pre>
 
+Once you have Mongo running as a process, you can try connecting to your Mongo
+instance by using the `mongo` shell.
 
+<pre>
+<code>$ mongo</code>
+</pre>
+
+<h2>Database Commands</h2>
+
+MongoDB won't create a database until something is inserted into it. The trick is
+to start using your database (even if it doesn't exist yet), create a collection,
+and insert a document into that collection. Try running some of these commands
+in the `mongo` shell.
+
+<pre>
+<code><span class="comment">// start using new database</span>
+&gt; use new_db
+
+<span class="comment">// show current database</span>
+&gt; db
+
+<span class="comment">// list all databases</span>
+&gt; show databases
+
+<span class="comment">// insert a document in the "cats" collection</span>
+&gt; db.cats.insert({"name": "Theodore", "colour": "grey"});
+
+<span class="comment">// list all databases again</span>
+&gt; show databases
+
+<span class="comment">// show all collections in current database</span>
+&gt; show collections</code>
+</pre>
 
 
 
