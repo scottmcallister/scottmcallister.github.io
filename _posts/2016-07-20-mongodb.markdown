@@ -12,4 +12,46 @@ categories:
 ---
 
 As far as NoSql databases go, MongoDB is one of the most popular and recognizable
-options out there. 
+options out there. It's been widely adopted in the Node JS community as the data
+store for the popular MEAN stack.
+
+##Installation
+
+MongoDB can be installed on Mac, Windows, and Linux systems and there are slight
+differences between installation methods on each platform. I'm going to be
+installing on Mac, so if you're using Windows or Linux I'd recommend taking a
+look at MongoDB's [documentation][mongo-install].
+
+In general the only steps involved are creating a directory to store the database
+and installing the executables needed to run a Mongo server. The default directory
+for storing a Mongo database is `/data/db`, so make sure this directory exists
+and the user you're logged in as has write permissions.
+
+<pre>
+<code>$ sudo mkdir /data/db
+$ sudo chown -R yourusername:wheel /data/db</code>
+</pre>
+
+For installing the MongoDB executables, we'll be using Homebrew.
+
+<pre>
+<code>$ brew update
+$ brew install mongodb</code>
+</pre>
+
+If you'd rather install MongoDB without Homebrew, there are [instructions][mongo-manual] on MongoDB's
+website showing you how to install manually. 
+
+##Running MongoDB
+
+
+
+
+
+
+
+
+
+
+[mongo-install]: https://docs.mongodb.com/manual/administration/install-community/
+[mongo-manual]: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition-manually
