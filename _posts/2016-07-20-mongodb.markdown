@@ -15,14 +15,14 @@ As far as NoSql databases go, MongoDB is one of the most popular and recognizabl
 options out there. It's been widely adopted in the Node JS community as the data
 store for the popular MEAN stack. As a document based NoSql database, MongoDB does
 not use a table structure like most relational databases and instead stores groups
-(collections) of JSON objects (documents).
+of JSON objects.
 
 <h2>Basic Concepts</h2>
 
 If you're used to working with relational databases like MySql and Postgres, you'll
 probably find MongoDB's structure fairly easy to wrap your head around. You can think
-of MongoDB collections as basically a Sql table without any columns defined. You can
-also think of MongoDB documents as essentially rows in a Sql table.
+of MongoDB collections as basically a SQL table without any columns defined. You can
+also think of MongoDB documents as essentially rows in a SQL table.
 
 While MongoDB doesn't require any sort of a schema to be implemented, it's usually
 best practice to define some sort of a structure to your documents. This structure
@@ -93,8 +93,9 @@ instance by using the `mongo` shell.
 
 MongoDB won't create a database until something is inserted into it. The trick is
 to start using your database (even if it doesn't exist yet), create a collection,
-and insert a document into that collection. Try running some of these commands
-in the `mongo` shell.
+and insert a document into that collection.
+
+Try running some of these commands in the `mongo` shell.
 
 <pre>
 <code><span class="comment">// start using new database</span>
@@ -107,7 +108,7 @@ in the `mongo` shell.
 &gt; show databases
 
 <span class="comment">// insert a document in the "cats" collection</span>
-&gt; db.cats.insert({"name": "Theodore", "colour": "grey"});
+&gt; db.cats.insert({"name": "Theodore", "color": "grey"});
 
 <span class="comment">// list all databases again</span>
 &gt; show databases
@@ -116,6 +117,69 @@ in the `mongo` shell.
 &gt; show collections</code>
 </pre>
 
+<h2>CRUD Operations</h2>
+
+To create a document in MongoDB, there are two commands that you can use; `insert()`
+and `save()`. The main difference between these two commands is that `insert()` will
+always create a new document, but `save()` can also be used to update existing
+documents if the document being passed has an "`_id`" field.
+
+<pre>
+<code><span class="comment">// create a cat document</span>
+&gt; db.cats.insert({"&#95;id": 1, "name": "Tommy", "color": "black"});
+
+<span class="comment">// update Tommy using save()</span>
+&gt; db.cats.save({"&#95;id": 1, "name": "Tommy", "color": "white"});
+
+<span class="comment">// find all cat documents</span>
+&gt; db.cats.find();</code>
+</pre>
+
+As you can see in the previous code block, we used the `find()` function to read
+documents from a collection. You can also pass a query document as a parameter to `find()`
+to return all documents with matching fields. There is also a second optional parameter
+to `find()` that can be used to define what fields should be returned in each document.
+
+<pre><code><span class="comment">// make another cat</span>
+&gt; db.cats.insert({"name": "Marvin", "color": "grey"});
+
+<span class="comment">// find all grey cats</span>
+&gt; db.cats.find({"color": "grey"});
+
+<span class="comment">// only return cat names</span>
+&gt; db.cats.find({},{"&#95;id": false, "name": true});</code>
+</pre>
+
+In addition to the `save()` function we saw earlier, there is also an `update()`
+function that can be used to modify existing documents in MongoDB. The parameters
+for `update()` are similar to `find()` with the query document as the first parameter,
+but the second parameter is used to specify what updates will be made to the
+document found. There are also optional parameters for creating new documents if
+none are found and updating multiple documents at the same time.
+
+<pre><code><span class="comment">// update Theodore's color</span>
+&gt; db.cats.update({"name": "Theodore"}, {"name": "Theodore", "color": "silver"});
+
+<span class="comment">// show all cats</span>
+&gt; db.cats.find();</code>
+</pre>
+
+You can delete documents from a collection using the `remove()` function. There is
+a required query parameter to specify which documents need to be deleted. Passing an
+empty document for the query parameter will delete every document in the collection.
+
+<pre><code><span class="comment">// delete Marvin from the collection</span>
+&gt; db.cats.remove({"name": "Marvin"});
+
+<span class="comment">// delete all cats</span>
+&gt; db.cats.remove({});</code>
+</pre>
+
+<h2>Final Thoughts</h2>
+
+That pretty much covers very the basics of using MongoDB. As you can see, setting
+up a database and changing data within a database can be done fairly quickly with
+very minimal effort.
 
 
 [mongo-install]: https://docs.mongodb.com/manual/administration/install-community/
