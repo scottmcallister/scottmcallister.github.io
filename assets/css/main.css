@@ -1514,8 +1514,8 @@ pre code{
 code[class*="language-"]{
   background: rgb(245, 242, 240) !important;
   padding:1rem 1rem;
-  border-top-left-radius: none;
-  border-top-right-radius: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 pre code .comment{
   color:#777777;
