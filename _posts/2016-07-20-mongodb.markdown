@@ -25,16 +25,16 @@ of MongoDB collections as basically a SQL table without any columns defined. You
 also think of MongoDB documents as essentially rows in a SQL table.
 
 While MongoDB doesn't require any sort of a schema to be implemented, it's usually
-best practice to define some sort of a structure to your documents. This structure
-should be defined at the application level to make sure any documents being inserted
+best to define some sort of a structure to your documents. This structure should
+be defined at the application level to make sure any documents being inserted
 will have the required fields you'll be reading from in your app.
 
 <h2>Installation</h2>
 
-MongoDB can be installed on Mac, Windows, and Linux systems and there are slight
-differences between installation methods on each platform. I'm going to be
+MongoDB can be installed on Mac, Windows, and Linux systems. I'm going to be
 installing on Mac, so if you're using Windows or Linux I'd recommend taking a
-look at MongoDB's [documentation][mongo-install].
+look at MongoDB's [documentation][mongo-install] as there are slight differences for
+installation on these platforms.
 
 In general the only steps involved with installing MongoDB are creating a directory
 to store the database and installing the executables needed to run a Mongo server.
@@ -68,8 +68,8 @@ the `mongod` command without any arguments.
 
 This works for starting a MongoDB process in the foreground, but I don't like starting
 Mongo this way for a couple of reasons. First of all, if you want to run a web
-app locally that connects to MongoDB or work with your database directly from the
-command line you need to have multiple tabs open in your terminal just to get
+app locally that connects to MongoDB, or work with your database directly from the
+command line, you need to have multiple tabs open in your terminal just to get
 Mongo up and running. Also, in the event that your machine shuts down while Mongo is
 running as a process, the lock file for your Mongo process will need to be
 deleted and you will need to run `mongod --repair` to start another process.
@@ -166,7 +166,7 @@ none are found and updating multiple documents at the same time.
 
 You can delete documents from a collection using the `remove()` function. There is
 a required query parameter to specify which documents need to be deleted. Passing an
-empty document for the query parameter will delete every document in the collection.
+empty document as the query parameter will delete every document in the collection.
 
 <pre><code><span class="comment">// delete Marvin from the collection</span>
 &gt; db.cats.remove({"name": "Marvin"});
@@ -177,7 +177,7 @@ empty document for the query parameter will delete every document in the collect
 
 <h2>Final Thoughts</h2>
 
-That pretty much covers very the basics of using MongoDB. As you can see, setting
+That pretty much covers the basics of using MongoDB. As you can see, setting
 up a database and changing data within a database can be done fairly quickly with
 very minimal effort.
 
