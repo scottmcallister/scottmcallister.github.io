@@ -74,7 +74,14 @@ Mongo up and running. Also, in the event that your machine shuts down while Mong
 running as a process, the lock file for your Mongo process will need to be
 deleted and you will need to run `mongod --repair` to start another process.
 
-I generally prefer to run MongoDB as a <b>daemon</b>. You can use the `--fork` flag to
+I generally prefer to run MongoDB as a <b>service</b>. If you installed MongoDB with
+homebrew you can start MongoDB as a service like this:
+
+<pre>
+<code>$ brew services start mongodb</code>
+</pre>
+
+If you didn't install Mongo with homebrew, you can use the `--fork` flag to
 run MongoDB in the background. When using `--fork`, you'll also need to declare
 where logs will be written to by using `--logpath`.
 
