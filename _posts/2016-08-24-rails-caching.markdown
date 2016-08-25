@@ -215,7 +215,7 @@ end
 </code>
 </pre>
 
-By setting touch to true, any action which updates a comment will also update the  
+By setting touch to true, any action which updates a comment will also update the 
 post it belongs to. This will expire the post fragment's cache and prevent stale data
 from being shown. Also, any comment fragments within that post that haven't been
 updated will still be cached.
