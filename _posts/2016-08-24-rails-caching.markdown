@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Caching in Rails"
-date: 2016-08-22 07:03
+date: 2016-08-24 07:03
 image: '/assets/img/'
 description: 'A quick look at how caching can improve the performance of Ruby on Rails applications'
 tags:
