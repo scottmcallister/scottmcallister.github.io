@@ -220,7 +220,7 @@ post it belongs to. This will expire the post fragment's cache and prevent stale
 from being shown. Also, any comment fragments within that post that haven't been
 updated will still be cached.
 
-<h2>Wrapping up</h2>
+<h2>Wrapping Up</h2>
 
 In this post we've explored two caching strategies you can use to improve the
 performance of your Rails apps. There are a few other caching strategies available
