@@ -47,7 +47,7 @@ $ rake db:migrate</code>
 </pre>
 
 <div class="code-description">
-  <p>app/controllers/posts_controller.rb</p>
+  <p>controllers/posts_controller.rb</p>
 </div>
 <pre>
 <code class="language-ruby">class PostsController < ApplicationController
@@ -121,3 +121,101 @@ significantly slower at around 5000ms. This makes sense, since each of the 1000
 fragments loaded on the page will need to create a new cache entry when they are
 rendered. The subsequent requests however were loading MUCH faster at around 800ms.
 That's less than half the time it took before we implemented fragment caching!
+
+<h2>Russian Doll Caching</h2>
+
+The next form of caching we're going to explore is called "Russian Doll caching".
+This form of caching involves caching fragments that are contained inside other
+cached fragments.
+
+Let's say your app has cached fragments inside each of your post fragments to
+represent comments for that post. If any of these comments are updated, the post
+fragment will still show a cached version of its comments since the post record
+hasn't been updated.
+
+We can scaffold out comments for our posts and insert a comment into the database.
+
+<pre>
+<code>$ rails g scaffold comment message:string post:belongs_to
+$ rake db:migrate
+$ rails db
+
+sqlite> insert into comments(message, post_id, created_at, updated_at)
+        values("first comment", 1, 'now', 'now');
+sqlite> .exit</code>
+</pre>
+
+Now let's update our post model and our views to show each post's comments in our
+app.
+
+<div class="code-description">
+  <p>models/post.rb</p>
+</div>
+<pre>
+<code class="language-ruby">
+class Post < ApplicationRecord
+  has_many :comment, dependent: :destroy
+
+  def comments
+    all_comments = Comment.where(post_id: self.id)
+    return all_comments
+  end
+end
+</code>
+</pre>
+
+<div class="code-description">
+  <p>views/comments/_comment.html.erb</p>
+</div>
+{% highlight erb %}
+<p><%= comment.message %></p>
+{% endhighlight %}
+
+<div class="code-description">
+  <p>views/_post.html.erb</p>
+</div>
+{% highlight erb %}
+<h3><%= post.title %></h3>
+<% post.comments.each do |comment| %>
+  <%= render 'comments/comment', :comment => comment %>
+<% end %>
+{% endhighlight %}
+
+If we take a look at our app now, we can see the comment that was inserted just
+below the first post listing. Without restarting the server let's try inserting
+another comment for the same post and reload our page. Try creating another comment
+by heading to `/comments/new` and setting the post value to 1.
+
+As you can see, the second comment isn't shown. If we restart the app to clear the
+cache the second post should be displayed. To implement Russian doll caching for
+our comments, the first step is to cache the inner comment fragments:
+
+<div class="code-description">
+  <p>views/_post.html.erb</p>
+</div>
+{% highlight erb %}
+<h3><%= post.title %></h3>
+<% post.comments.each do |comment| %>
+  <% cache comment do %>
+    <%= render 'comments/comment', :comment => comment %>
+  <% end %>
+<% end %>
+{% endhighlight %}
+
+The second step is to use the `touch` method in the comment model.
+
+<div class="code-description">
+  <p>models/comment.rb</p>
+</div>
+<pre>
+<code class="language-ruby">
+class Comment < ApplicationRecord
+  belongs_to :post, touch: true
+end
+</code>
+</pre>
+
+By setting touch to true, any action which updates a comment will also update the  
+post it belongs to. This will expire the post fragment's cache and prevent stale data
+from being shown. Also, any comment fragments within that post that haven't been
+updated will still be cached.
