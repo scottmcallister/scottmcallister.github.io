@@ -11,6 +11,6 @@ project-date: October 2014 - Present
 client: Nextopia
 category: Web Development
 link: http://merchant.nextopiasoftware.com
-description: As a software developer for Nextopia, Scott worked on various features of Nextopia's product suite. These features included building a reporting section for autocomplete data, creating a geo-merchandizing section, implementing a templating system for Nextopia's "product finder" product, and many others. The server side code for Nextopia was written in PHP while the front end interface used both jQuery and Angular JS for DOM manipulation.
+description: As a software developer for Nextopia, Scott worked on various features of Nextopia's product suite. These features included building a reporting section for autocomplete data, creating a geo-merchandizing section, implementing a templating system for Nextopia's "product finder" product, and many others. The server side code for Nextopia was written in PHP while the front end interface used jQuery for DOM manipulation.
 
 ---
