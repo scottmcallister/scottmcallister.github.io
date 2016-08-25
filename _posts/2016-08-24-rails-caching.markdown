@@ -120,7 +120,7 @@ After adding in fragment caching, the initial page load in my test was
 significantly slower at around 5000ms. This makes sense, since each of the 1000
 fragments loaded on the page will need to create a new cache entry when they are
 rendered. The subsequent requests however were loading MUCH faster at around 800ms.
-That's less than half the time it took before we implemented fragment caching!
+That's less than half the time it took before!
 
 <h2>Russian Doll Caching</h2>
 
@@ -187,7 +187,7 @@ another comment for the same post and reload our page. Try creating another comm
 by heading to `/comments/new` and setting the post value to 1.
 
 As you can see, the second comment isn't shown. If we restart the app to clear the
-cache the second post should be displayed. To implement Russian doll caching for
+cache the second post should be displayed. To implement proper caching for
 our comments, the first step is to cache the inner comment fragments:
 
 <div class="code-description">
@@ -215,7 +215,20 @@ end
 </code>
 </pre>
 
-By setting touch to true, any action which updates a comment will also update the 
+By setting touch to true, any action which updates a comment will also update the
 post it belongs to. This will expire the post fragment's cache and prevent stale data
 from being shown. Also, any comment fragments within that post that haven't been
 updated will still be cached.
+
+<h2>Wrapping up</h2>
+
+In this post we've explored two caching strategies you can use to improve the
+performance of your Rails apps. There are a few other caching strategies available
+that can be used to improve performance even further. Some of these strategies
+have been removed from the core Rails framework in recent versions and placed in
+separate gems. I'd suggest taking a look at the Ruby on Rails <a href="http://guides.rubyonrails.org/caching_with_rails.html" target="_blank">documentation</a>
+for more information.
+
+I think these strategies are a great first step towards maximizing the performance
+of your Rails applications. Hopefully you'll find the examples in this post useful
+as you implement caching for your own applications.
