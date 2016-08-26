@@ -91,7 +91,7 @@ some data:
   <p>db/seeds.rb</p>
 </div>
 <pre>
-<code class="language-ruby">(1..10000).each do |i|
+<code class="language-ruby">(1..1000).each do |i|
   Post.create!({title: "Post #{i}"})
 end</code></pre>
 
