@@ -23,7 +23,7 @@ handled by calling a single function or binding an event handler to the document
 
 Unfortunately, relying exclusively on libraries like jQuery for handling
 asynchronous requests and DOM manipulation will only make life easier
-up to a point. Once you start toggling visibility, creating and destroying  
+up to a point. Once you start toggling visibility, creating and destroying
 elements on the page, and changing CSS properties based on different user
 interactions, trying to handle and test for all possible states becomes
 increasingly difficult. This is the problem that Redux claims to solve, and
@@ -33,6 +33,9 @@ of having to navigate through hundreds of lines of nested inline jQuery event
 handler code to fix a bug or implement a new feature, I can safely say that in
 many cases it's well worth the hastle of having to edit more than one file to make
 a change.
+
+To see if React and Redux makes sense for the application you're building, feel
+free to check out <a href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367#.vpjibudwk" target="_blank">this article.</a>
 
 ## The Architecture ##
 
@@ -50,8 +53,9 @@ The first time I looked at this diagram, I assumed that this also
 described how the directory structure of a Redux application should look. I
 figured components should all be grouped in one directory, actions in their own
 directory, reducers in another, and the store definition at the root of the
-application. In fact if you look at the "real world" example on the Redux Github
-project, it will look something like this:
+application. In fact if you look at the "real world" example on the
+<a href="https://github.com/reactjs/redux/tree/master/examples/real-world" target="_blank">
+Redux Github</a> project, it will look something like this:
 
 <pre>
 <code>
@@ -68,7 +72,7 @@ src/
 │   │   thing-one.jsx
 │   │   thing-two.jsx
 │   │   thing-three.js
-│   
+│
 └───reducers/
     │   thing-one.js
     │   thing-two.js
@@ -84,6 +88,8 @@ sub-directories in the actions, components, and reducers sections, you'll still
 have to navigate to three completely separate parts of your application to make
 any sort of state change.
 
+## A Better Way ##
+
 What I discovered after working on a pre-existing Redux application is that the
 directory structure is by no means set in stone. Instead of grouping your files
 based on what part of the data flow they are a part of, you can group them based
@@ -95,7 +101,7 @@ directory structure that looks sort of like this:
 src/
 │   root-reducer.js
 │   store.js
-│    
+│
 └───scenes/
     │
     └───auth/
@@ -104,7 +110,7 @@ src/
     │   │   reducer.js
     │   │
     │   └───components/
-    │       │   login.jsx  
+    │       │   login.jsx
     │       │   forgot-password.jsx
     │       │   signup.jsx
     │
@@ -114,7 +120,7 @@ src/
         │   reducer.js
         │
         └───components/
-            │   section-one.jsx  
+            │   section-one.jsx
             │   section-two.jsx
             │   section-three.jsx
 </code>
@@ -123,6 +129,41 @@ src/
 Not only does this structure make it easier to find any specific component
 based on where it's used in the UI, but it also helps you locate the actions
 and reducers associated with variables in your state tree. If you were to
-have several root reducers in your app across multiple sections with one in each
-sub-section, you could follow pretty much the same path in your directory tree
-as you would follow in your state tree. 
+have several root reducers in your app across multiple sub-sections, you could
+follow pretty much the same path in your directory tree as you would follow in
+your state tree
+
+## Quick Tip - Use Redux Devtools ##
+
+After working with Redux for quite some time I finally received one tip from a
+co-worker that completely changed my workflow and helped me see why Redux is
+so great. If you're using Redux and you haven't already installed the
+Redux Devtools browser extension, I can tell you that using it will be one
+of the best things you can do to improve your Redux development workflow.
+
+With this extension you can see a complete ordered history of every action
+that's been dispatched in your application and the value of your application's
+state tree after each action. If there is literally any problem with your Redux
+data flow, this tool can help point you in the right direction to see why it
+isn't working the way you want it to.
+
+Let's say you've implemented an action and a reducer case that handles a button
+click in one of your components. After writing and transpiling your code, you
+try testing the change in your browser, but you don't see the change working.
+
+Don't see the action listed after clicking? It's probably not being dispatched
+in your component. Don't see a state change for an action that's been called?
+The reducer probably isn't handling the action properly. Don't see the component
+re-rendering on a state change? The state probably isn't mapped correctly to the
+component's props in the `connect()` function.
+
+This extension also illustrates why having a single store for your application
+state is so useful. The ability to go back to any point your application's
+history becomes trivial when all you need to do is change one JSON value.
+
+## Final Thoughts ##
+
+Despite adding some complexity to smaller scale applications, the conventions
+that Redux uses can help manage state in apps that are larger in scale. Using
+Redux Devtools and an alternative directory structure has helped me with
+handling the complexity of Redux. 
