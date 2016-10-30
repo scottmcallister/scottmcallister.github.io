@@ -42,7 +42,7 @@ free to check out <a href="https://medium.com/@dan_abramov/you-might-not-need-re
 If you've spent any amount of time working with Redux, you've probably seen some
 version of this diagram.
 
-<img src="/img/redux-flow.png" style="width: 80%; margin: auto;">
+<img src="/assets/img/redux-flow.png" style="width: 80%; margin: auto;">
 
 The diagram describes the flow of data fairly well. Components dispatch actions,
 actions return an object for the reducer to handle, reducers take that object
@@ -133,11 +133,11 @@ have several root reducers in your app across multiple sub-sections, you could
 follow pretty much the same path in your directory tree as you would follow in
 your state tree
 
-## Quick Tip - Use Redux Devtools ##
+## Redux Devtools Extension ##
 
 After working with Redux for quite some time I finally received one tip from a
 co-worker that completely changed my workflow and helped me see why Redux is
-so great. If you're using Redux and you haven't already installed the
+so great; use the Redux Devtools Extension. If you're using Redux and you haven't already installed the
 Redux Devtools browser extension, I can tell you that using it will be one
 of the best things you can do to improve your Redux development workflow.
 
@@ -166,4 +166,4 @@ history becomes trivial when all you need to do is change one JSON value.
 Despite adding some complexity to smaller scale applications, the conventions
 that Redux uses can help manage state in apps that are larger in scale. Using
 Redux Devtools and an alternative directory structure has helped me with
-handling the complexity of Redux. 
+handling the complexity of Redux.
