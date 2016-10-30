@@ -5,9 +5,9 @@ date: 2016-10-25 07:03
 image: '/assets/img/'
 description: 'Some food for thought on the popular React library'
 tags:
-- React
-- Redux
-- Javascript
+- react
+- redux
+- javascript
 categories:
 - Web Development
 ---
