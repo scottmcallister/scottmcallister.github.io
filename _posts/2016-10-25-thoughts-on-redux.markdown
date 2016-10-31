@@ -3,7 +3,7 @@ layout: post
 title: "Thoughts on Redux"
 date: 2016-10-25 07:03
 image: '/assets/img/'
-description: 'Some food for thought on the popular React library'
+description: 'Some food for thought on the popular Javascript library'
 tags:
 - react
 - redux
