@@ -55,7 +55,7 @@ figured components should all be grouped in one directory, actions in their own
 directory, reducers in another, and the store definition at the root of the
 application. In fact if you look at the "real world" example on the
 <a href="https://github.com/reactjs/redux/tree/master/examples/real-world" target="_blank">
-Redux Github</a> project, it will look something like this:
+Redux Github project</a>, it will look something like this:
 
 <pre>
 <code>
