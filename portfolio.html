@@ -25,6 +25,8 @@ description: "Personal and professional coding projects I've worked on"
       <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/php-p.png"> {{ post.subtitle }}</div>
       {% elsif post.subtitle == "React Native" or post.subtitle == "React + Express"%}
       <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/react.png"> {{ post.subtitle }}</div>
+      {% elsif post.subtitle == "Javascript"%}
+      <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/js.png"> {{ post.subtitle }}</div>
       {% else %}
       <div class="subtitle">{{ post.subtitle }}</div>
       {% endif %}
