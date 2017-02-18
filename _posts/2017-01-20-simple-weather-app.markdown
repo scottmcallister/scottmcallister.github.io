@@ -11,6 +11,6 @@ project-date: January 2017
 client: Personal Project
 category: Mobile Development
 link: https://github.com/scottmcallister/simple-weather-app
-description: A weather mobile app built with React Native and Redux. The app uses an API from "http://openweathermap.org/" to read weather data for different cities.
+description: A weather mobile app built with React Native and Redux. The app uses an API from <a href="http://openweathermap.org" target="_blank">openweathermap.org</a> to read weather data for different cities.
 
 ---
