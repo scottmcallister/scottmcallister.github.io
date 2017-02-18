@@ -579,6 +579,7 @@ body.search-overlay:after {
 }
 .tags {
     margin-top: 1.875rem;
+    text-align: center;
 }
 .tags a {
     font-size: .875rem;
@@ -814,7 +815,7 @@ body {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 82.83333333333334%;
+    width: 100%;
     margin-left: 0%;
     margin-right: 3%;
 }
@@ -854,6 +855,7 @@ body {
 .post-item .content .post-title {
     color: #000;
     font-size: 2rem;
+    text-align: center;
 }
 @media only screen and (max-width: 37.5rem) {
     .post-item .content .post-title {

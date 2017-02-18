@@ -6,17 +6,6 @@ layout: default
     {% for post in site.posts %}
       {% if post.layout != 'project' %}
         <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-                <a class="datetime" href="{{ post.url | prepend: site.baseurl }}">
-                    <meta itemprop="datePublished" content="{{post.date}}">
-                    <time datetime="{{ post.date | date_to_xmlschema }}">
-                        <span class="day">
-                            {{ post.date | date: "%d" }}
-                        </span>
-                        <span class="month-year">
-                            {{ post.date | date: "%B %Y" }}
-                        </span>
-                    </time>
-                </a>
                 <div class="content">
                     <a href="{{ post.url | prepend: site.baseurl }}"><h2 class="post-title" itemprop="name">{{ post.title }}</h2></a>
                     <p class="description">
