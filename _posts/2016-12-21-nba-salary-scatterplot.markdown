@@ -1,5 +1,5 @@
 ---
-title: nba-salary-scatterplot
+title: nba-contracts
 subtitle: D3 + Flask
 layout: project
 modal-id: 4
