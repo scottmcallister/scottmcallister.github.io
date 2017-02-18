@@ -30,10 +30,12 @@
                     <div class="text-muted"><img class="platform-icon" src="img/icons/android.png"> {{ post.subtitle }}</div>
                     {% elsif post.subtitle == "PHP"%}
                     <div class="text-muted"><img class="platform-icon" src="img/icons/php-p.png"> {{ post.subtitle }}</div>
-                    {% elsif post.subtitle == "React Native"%}
+                    {% elsif post.subtitle contains "React"%}
                     <div class="text-muted"><img class="platform-icon" src="img/icons/react.png"> {{ post.subtitle }}</div>
                     {% elsif post.subtitle == "JS"%}
                     <div class="text-muted"><img class="platform-icon" src="img/icons/js.png"> {{ post.subtitle }}</div>
+                    {% elsif post.subtitle contains "D3"%}
+                    <div class="text-muted"><img class="platform-icon" src="img/icons/d3.png"> {{ post.subtitle }}</div>
                     {% else %}
                     <div class="text-muted">{{ post.subtitle }}</div>
                     {% endif %}
