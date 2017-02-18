@@ -3,7 +3,7 @@ title: nba-contracts
 subtitle: D3 + Flask
 layout: project
 modal-id: 4
-date: 2016-06-12
+date: 2016-12-21
 img: nba-salary-scatterplot.png
 thumbnail: nba-salary-scatterplot-thumbnail.png
 alt: image-alt
