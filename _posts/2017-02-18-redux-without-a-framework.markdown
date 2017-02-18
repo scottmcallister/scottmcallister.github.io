@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Redux Without A Framework"
-date: 2017-02-15 07:03:35
+date: 2017-02-17 01:26:35
 image: '/assets/img/'
 description: 'How to use Redux without using a framework'
 tags:
