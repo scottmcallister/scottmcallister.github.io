@@ -26,6 +26,8 @@
                     <div class="text-muted"><img class="platform-icon" src="img/icons/sailsjs.png"> {{ post.subtitle }}</div>
                     {% elsif post.subtitle == "Django"%}
                     <div class="text-muted"><img class="platform-icon" src="img/icons/python.png"> {{ post.subtitle }}</div>
+                    {% elsif post.subtitle contains "Spring Boot"%}
+                    <div class="text-muted"><img class="platform-icon" src="img/icons/spring-boot.png"> {{ post.subtitle }}</div>
                     {% elsif post.subtitle == "Android / Java"%}
                     <div class="text-muted"><img class="platform-icon" src="img/icons/android.png"> {{ post.subtitle }}</div>
                     {% elsif post.subtitle == "PHP"%}
