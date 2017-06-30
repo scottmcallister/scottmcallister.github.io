@@ -1214,6 +1214,7 @@ pre code {
     padding-left: 0;
     padding-right: 0;
     padding: 0 1.25rem;
+    overflow: auto;
 }
 pre code:before,
 pre code:after {
