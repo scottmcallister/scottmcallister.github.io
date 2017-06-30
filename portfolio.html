@@ -29,6 +29,8 @@ description: "Personal and professional coding projects I've worked on"
       <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/js.png"> {{ post.subtitle }}</div>
       {% elsif post.subtitle contains "D3"%}
       <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/d3.png"> {{ post.subtitle }}</div>
+      {% elsif post.subtitle contains "Spring Boot"%}
+      <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/spring-boot.png"> {{ post.subtitle }}</div>
       {% else %}
       <div class="subtitle">{{ post.subtitle }}</div>
       {% endif %}
