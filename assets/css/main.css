@@ -1511,7 +1511,7 @@ pre code{
   padding-right:20px;
   border-top:none;
   border-radius: 5px;
-
+  overflow: auto;
 }
 code[class*="language-"]{
   background: rgb(245, 242, 240) !important;
