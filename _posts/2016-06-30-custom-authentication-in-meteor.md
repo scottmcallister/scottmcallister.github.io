@@ -35,7 +35,8 @@ packages we'll be using. After you have everything installed, let's start our pr
 <pre>
 <code>$ meteor create auth-app
 $ cd auth-app
-$ meteor npm install --save react react-dom react-router react-addons-pure-render-mixin
+$ meteor npm install --save react react-dom react-router 
+$ meteor npm install --save react-addons-pure-render-mixin react-router-dom
 $ meteor add accounts-password react-meteor-data twbs:bootstrap</code>
 </pre>
 
@@ -114,7 +115,7 @@ on the client, the server, or both depending on which directory they are include
 </div>
 <pre>
 <code class="language-jsx">import React from 'react'
-import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // containers
 import AppContainer from '../../ui/containers/AppContainer.jsx'
@@ -125,12 +126,12 @@ import SignupPage from '../../ui/pages/SignupPage.jsx'
 import LoginPage from '../../ui/pages/LoginPage.jsx'
 
 export const renderRoutes = () => (
-  <Router history={browserHistory}>
-    <Route path="login" component={LoginPage}/>
-    <Route path="signup" component={SignupPage}/>
-    <Route path="/" component={AppContainer}>
-      <IndexRoute component={MainContainer}/>
-    &lt;/Route>
+  &lt;Router>
+    &lt;div>
+      <Route path="/login" component={LoginPage}/>
+      <Route path="/signup" component={SignupPage}/>
+      <Route exact={true} path="/" component={AppContainer}/>
+    &lt;/div>
   &lt;/Router>
 );
 
@@ -149,8 +150,9 @@ reactive data sources within our rendered views.
   <p>imports/ui/containers/AppContainer.jsx</p>
 </div>
 <pre>
-<code class="language-jsx">import React, { Component, PropTypes } from 'react';
-import { browserHistory } from 'react-router'
+<code class="language-jsx">import React, { Component } from 'react';
+import { withHistory } from 'react-router-dom';
+import MainContainer from './MainContainer.jsx';
 
 export default class AppContainer extends Component {
   constructor(props){
@@ -165,13 +167,13 @@ export default class AppContainer extends Component {
 
   componentWillMount(){
     if (!this.state.isAuthenticated) {
-      browserHistory.push('/login');
+      this.props.history.push('/login');
     }
   }
 
   componentDidUpdate(prevProps, prevState){
     if (!this.state.isAuthenticated) {
-      browserHistory.push('/login');
+      this.props.history.push('/login');
     }
   }
 
@@ -181,7 +183,7 @@ export default class AppContainer extends Component {
         if (err) {
             console.log( err.reason );
         } else {
-            browserHistory.push('/login');
+            this.props.history.push('/login');
         }
     });
   }
@@ -203,7 +205,7 @@ export default class AppContainer extends Component {
             &lt;/div>
           &lt;/div>
         &lt;/nav>
-        {this.props.children}
+        &lt;MainContainer />
       &lt;/div>
     );
   }
@@ -225,8 +227,8 @@ render method to reduce the number of files we need for this tutorial.
   <p>imports/ui/pages/LoginPage.jsx</p>
 </div>
 <pre>
-<code class="language-jsx">import React, { Component, PropTypes } from 'react'
-import { browserHistory, Link } from 'react-router'
+<code class="language-jsx">import React, { Component } from 'react'
+import { withHistory, Link } from 'react-router-dom'
 import { createContainer } from 'meteor/react-meteor-data'
 
 export default class LoginPage extends Component {
@@ -248,7 +250,7 @@ export default class LoginPage extends Component {
           error: err.reason
         });
       } else {
-        browserHistory.push('/');
+        this.props.history.push('/');
       }
     });
   }
@@ -313,9 +315,9 @@ logging in.
   <p>imports/ui/pages/SignupPage.jsx</p>
 </div>
 <pre>
-<code class="language-jsx">import React, { Component, PropTypes } from 'react'
-import { browserHistory, Link } from 'react-router'
-import { Accounts } from 'meteor/accounts-base'
+<code class="language-jsx">import React, { Component } from 'react';
+ import { withHistory, Link } from 'react-router-dom';
+ import { Accounts } from 'meteor/accounts-base';
 
 export default class SignupPage extends Component {
   constructor(props){
@@ -338,7 +340,7 @@ export default class SignupPage extends Component {
           error: err.reason
         });
       } else {
-        browserHistory.push('/login');
+        this.props.history.push('/login');
       }
     });
   }
@@ -403,8 +405,9 @@ app's database.
   <p>imports/ui/pages/MainPage.jsx</p>
 </div>
 <pre>
-<code class="language-jsx">import React, { Component, PropTypes } from 'react'
-import { browserHistory, Link } from 'react-router'
+<code class="language-jsx">import React, { Component } from 'react';
+ import { withHistory, Link } from 'react-router-dom';
+ import PropTypes from 'prop-types';
 
 export default class MainPage extends Component {
   constructor(props){
@@ -430,7 +433,7 @@ export default class MainPage extends Component {
   }
 }
 
-MainPage.PropTypes = {
+MainPage.propTypes = {
   username: React.PropTypes.string
 }
 
