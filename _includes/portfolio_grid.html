@@ -20,7 +20,9 @@
                 </a>
                 <div class="portfolio-caption">
                     <h4>{{ post.title }}</h4>
-                    {% if post.subtitle == "Ruby on Rails"%}
+                    {% if post.subtitle contains "GraphQL" %}
+                    <div class="text-muted"><img class="platform-icon" src="img/icons/graphql.png"> {{ post.subtitle }}</div>
+                    {% elsif post.subtitle == "Ruby on Rails"%}
                     <div class="text-muted"><img class="platform-icon" src="img/icons/ruby.png"> {{ post.subtitle }}</div>
                     {% elsif post.subtitle == "Sails JS"%}
                     <div class="text-muted"><img class="platform-icon" src="img/icons/sailsjs.png"> {{ post.subtitle }}</div>

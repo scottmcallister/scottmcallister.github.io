@@ -11,7 +11,9 @@ description: "Personal and professional coding projects I've worked on"
   <div class="portfolio">
     <a target="_blank" href="{{ post.link }}">
       <h2>{{ post.title }}</h2>
-      {% if post.subtitle == "Ruby on Rails"%}
+      {% if post.subtitle contains "GraphQL" %}
+      <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/graphql.png"> {{ post.subtitle }}</div>
+      {% elsif post.subtitle == "Ruby on Rails"%}
       <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/rails.png"> {{ post.subtitle }}</div>
       {% elsif post.subtitle == "Sails JS"%}
       <div class="subtitle"><img class="platform-icon" src="../assets/img/icons/sailsjs.png"> {{ post.subtitle }}</div>

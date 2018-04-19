@@ -1,6 +1,6 @@
 ---
 title: twitter-copy-graphql
-subtitle: Spring Boot + React
+subtitle: GraphQL, Spring Boot, React
 layout: project
 modal-id: 4
 date: 2018-03-07
