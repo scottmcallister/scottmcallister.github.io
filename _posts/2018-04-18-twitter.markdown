@@ -1,0 +1,16 @@
+---
+title: twitter-copy-graphql
+subtitle: Spring Boot + React
+layout: project
+modal-id: 4
+date: 2018-03-07
+img: twitter.png
+thumbnail: twitter.png
+alt: image-alt
+project-date: Winter 2018
+client: Personal Project
+category: Web Development
+link: https://github.com/scottmcallister/twitter-copy-graphql
+description: A simple Twitter clone using React/Apollo to connect to a GraphQL Spring Boot API. This app supports viewing tweets made by other users, viewing user profiles, and creating new tweets. The purpose of this project was not to completely copy the functionality of Twitter. This project was created to explore how web applications built with Java and React can use GraphQL as an alternative to REST. 
+
+---
